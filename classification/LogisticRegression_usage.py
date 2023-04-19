@@ -13,8 +13,8 @@ if __name__ == "__main__":
     X_train_norm = minmax_scale(X_train)
     X_test_norm = minmax_scale(X_test)
 
-    module = LogisticRegression(max_iter=10000)
-    module.fit(X_train_norm, y_train)
-    y_pred = module.predict(X_test_norm)
+    model = LogisticRegression(max_iter=10000)
+    model.fit(X_train_norm, y_train)
+    y_pred = model.predict(X_test_norm)
     acc = accuracy_score(y_test, y_pred)
     print(acc)
